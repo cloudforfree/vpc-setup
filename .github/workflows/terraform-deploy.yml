@@ -24,7 +24,7 @@ env:
 
 defaults:
   run:
-    working-directory: ./terraform
+    working-directory: terraform
 
 jobs:
   plan:
