@@ -24,6 +24,7 @@ env:
 
 defaults:
   run:
+    working-directory: ./infra
 
 jobs:
   destroy:
