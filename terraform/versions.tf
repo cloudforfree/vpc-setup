@@ -11,7 +11,7 @@ terraform {
   # Bucket, key and region are passed at init time (-backend-config) by the workflows.
   # use_lockfile = native S3 state locking (no DynamoDB table needed).
   backend "s3" {
-    region = "us-east-1"
+    region       = "us-east-1"
     use_lockfile = true
   }
 }
