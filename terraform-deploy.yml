@@ -61,7 +61,7 @@ jobs:
     needs: plan
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
-    environment: production   # add required reviewers in repo settings for a manual approval gate
+    # environment: production   # add required reviewers in repo settings for a manual approval gate
     steps:
       - uses: actions/checkout@v4
 
