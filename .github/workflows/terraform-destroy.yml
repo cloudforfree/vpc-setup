@@ -24,7 +24,6 @@ env:
 
 defaults:
   run:
-    working-directory: terraform
 
 jobs:
   destroy:
