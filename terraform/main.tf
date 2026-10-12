@@ -10,14 +10,6 @@ locals {
   az = data.aws_availability_zones.available.names[0]
 }
 
-resource "aws_iam_openid_connect_provider" "github" {
-  url            = "https://token.actions.githubusercontent.com"
-  client_id_list = ["sts.amazonaws.com"]
-
-  # Must contain at least one 40-char string
-  thumbprint_list = ["6938fd4d98bab03faadb97b34396831e3780aea1"]
-}
-
 # ---------- VPC ----------
 resource "aws_vpc" "lab" {
   cidr_block           = var.vpc_cidr
