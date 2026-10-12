@@ -40,9 +40,9 @@ Replace ACCOUNT_ID, GH_ORG and REPO, then save as trust.json:
 }
 ```
 ```bash
-aws iam create-role --role-name gha-vpc-lab --assume-role-policy-document file://trust.json
-aws iam attach-role-policy --role-name gha-vpc-lab --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess
-aws iam attach-role-policy --role-name gha-vpc-lab --policy-arn arn:aws:iam::aws:policy/AmazonSSMReadOnlyAccess
+aws iam create-role --role-name GitHubActionsRole --assume-role-policy-document file://trust.json
+aws iam attach-role-policy --role-name GitHubActionsRole --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess
+aws iam attach-role-policy --role-name GitHubActionsRole --policy-arn arn:aws:iam::aws:policy/AmazonSSMReadOnlyAccess
 ```
 Also give the role read/write on your state bucket (s3:GetObject, PutObject, DeleteObject, ListBucket)
 via an inline policy. EC2FullAccess is fine for a lab; tighten it for anything real.
